@@ -1,19 +1,19 @@
 import { StyleSheet, Text, View } from "react-native";
+import { FeedItem } from "../types/Feed";
 
-interface Props {
-  name: string;
-  job: string;
-}
-
-const Card = ({ name, job }: Props) => {
-  const formatName = (value: string) => {
-    return value.toUpperCase();
-  };
-
+const Card = ({
+  avatar,
+  username,
+  content,
+  image,
+  likes,
+  reposts,
+  comments,
+}: FeedItem) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{formatName(name)}</Text>
-      <Text style={styles.subtitle}>{job}</Text>
+      <Text style={styles.title}>{username}</Text>
+      <Text style={styles.subtitle}>{content}</Text>
     </View>
   );
 };
